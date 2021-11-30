@@ -7,6 +7,7 @@ import HeroCard from '../components/HeroCard';
     
     const [allHeroes,setAllHeroes]=useState([]);
 
+
 useEffect(()=>{
   console.log('useEffect executed!')
     const fetchMarvel = async()=>{
@@ -18,6 +19,7 @@ useEffect(()=>{
       console.log(marvel)
 
       setAllHeroes(marvel.data); 
+
 
       
 

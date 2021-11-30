@@ -3,20 +3,34 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
+
 import Typography from '@mui/material/Typography';
 import HeroModal from './HeroModal';
+import HoverRating from './HoverRating';
+import { CardActionArea } from '@mui/material';
+
+import { useHistory } from 'react-router-dom';
+
+
 
 const HeroCard = (props) => {
 
-    const { name, images, family, combat, durability, intelligence, power, speed, strength } = props;
+    const { key, name, images, family, combat, durability, intelligence, power, speed, strength } = props;
+
+    const history = useHistory()
+
+
+    const handleInfoClick = () => {
+      history.push(`/herodetails/${name}`)
+    }
 
     useEffect(() => {
 
 
     }, [])
   return (
-    <Card sx={{ maxWidth: 290, float: 'left', }}>
+    <Card sx={{ maxWidth: 290, float: 'left', margin: "15px", }}>
+      <CardActionArea onClick={handleInfoClick}>
       <CardMedia
         component="img"
         height="440"
@@ -28,14 +42,15 @@ const HeroCard = (props) => {
           {name}
         </Typography>
 
-        <Typography sx={{height: 100}} variant="body2" color="text.secondary">
+        <Typography sx={{height: 100}} variant="h6" color="text.secondary">
           {family}
         </Typography>
       </CardContent>
+      </CardActionArea>
 
 
       <CardActions>
-        <Button size="small">Share</Button>
+        <HoverRating/>
 
         <HeroModal 
             combat={combat}

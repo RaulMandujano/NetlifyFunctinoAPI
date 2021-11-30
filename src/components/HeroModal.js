@@ -31,25 +31,25 @@ const HeroModal = (props) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h4" component="h2">
+          <Typography id="modal-modal-title" variant="h3" component="h2">
             Power Stats
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
             Combat: {props.combat}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
             Durability: {props.durability}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
             Intelligence: {props.intelligence}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
             Power: {props.power}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
             Speed: {props.speed}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" variant="h5" sx={{ mt: 2 }}>
             Strength: {props.strength}
           </Typography>
 
