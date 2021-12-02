@@ -16,7 +16,7 @@ useEffect(()=>{
     try{
       const marvelResponse = await axios.get(marvelURL)
       const marvel = await marvelResponse;
-      console.log(marvel)
+      //console.log(marvel)
 
       setAllHeroes(marvel.data); 
 
@@ -46,12 +46,11 @@ useEffect(()=>{
             return(
               <HeroCard
                 key={hero.id}
+                id={hero.id}
                 name={hero.name}
                 images={hero.images.sm}
                 family={hero.connections.groupAffiliation}
                 relatives={hero.connections.relatives}
-                
-
                 combat={hero.powerstats.combat}
                 durability={hero.powerstats.durability}
                 intelligence={hero.powerstats.intelligence}

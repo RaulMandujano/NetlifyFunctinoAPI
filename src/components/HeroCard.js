@@ -15,13 +15,13 @@ import { useHistory } from 'react-router-dom';
 
 const HeroCard = (props) => {
 
-    const { key, name, images, family, combat, durability, intelligence, power, speed, strength } = props;
+    const { id, name, images, family, combat, durability, intelligence, power, speed, strength } = props;
 
     const history = useHistory()
 
 
     const handleInfoClick = () => {
-      history.push(`/herodetails/${name}`)
+      history.push(`/herodetails/${id}`)
     }
 
     useEffect(() => {
