@@ -49,9 +49,9 @@ const BasicTabs  = () => {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Marvel" {...a11yProps(0)} />
+          <Tab label="Marvel Comics" {...a11yProps(0)} />
           <Tab label="Dark horse comics" {...a11yProps(1)} />
-          <Tab label="DC" {...a11yProps(2)} />
+          <Tab label="DC Comics" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>

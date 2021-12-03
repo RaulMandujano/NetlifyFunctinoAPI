@@ -23,9 +23,12 @@ const App = () => {
 
       <Route path="/"><Welcome/></Route>
       <Route path="/heroes"> <BasicTabs/></Route>
+
+      <Container maxWidth="md">
+      <Route path="/herodetails/:id"><HeroDetails/></Route>
+      </Container>
       
       <Container maxWidth="sm">
-      <Route path="/herodetails/:id"><HeroDetails/></Route>
       <Route path="/signin" component={Login} />
       <Route path="/signup" component={SignUp} />
       </Container>
