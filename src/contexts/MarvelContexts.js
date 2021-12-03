@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react'
 import HeroCard from '../components/HeroCard';
 
 
-  function MarvelContexts() {
+  function MarvelContexts({ publisher = 'Marvel Comics'}) {
     
     const [allHeroes,setAllHeroes]=useState([]);
 
@@ -18,7 +18,7 @@ useEffect(()=>{
       const marvel = await marvelResponse;
       //console.log(marvel)
 
-      setAllHeroes(marvel.data); 
+      setAllHeroes(marvel.data.filter(el => el.biography?.publisher === publisher)); 
 
 
       
@@ -33,7 +33,7 @@ useEffect(()=>{
 
   fetchMarvel()
 },
- []
+ [publisher]
 )
 
   return (

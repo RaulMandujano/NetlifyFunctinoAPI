@@ -2,7 +2,7 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route } from "react-router-dom";
-import MarvelContexts from "./contexts/MarvelContexts";
+
 import ButtonAppBar from "./components/ButtonAppBar";
 import BasicTabs from "./components/BasicTabs";
 import Container from '@mui/material/Container';
@@ -19,10 +19,10 @@ const App = () => {
   return (
     <div>
       <ButtonAppBar />
-      <BasicTabs/>
+     
 
       <Route path="/"><Welcome/></Route>
-      <Route path="/heroes"><MarvelContexts/></Route>
+      <Route path="/heroes"> <BasicTabs/></Route>
       
       <Container maxWidth="sm">
       <Route path="/herodetails/:id"><HeroDetails/></Route>

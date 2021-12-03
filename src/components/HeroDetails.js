@@ -6,23 +6,22 @@ import { useParams } from 'react-router-dom';
 const HeroDetails = () =>{
 
     const params = useParams() 
-    const [hero , setHero] = React.useState([]);
+    const [hero , setHero] = React.useState(null);
 
     console.log({ params })
 
     React.useEffect(()=>{
         console.log('useEffect executed!')
           const fetchMarvel = async()=>{
-              const marvelURL = `/.netlify/functions/marvel`
+              const marvelURL = `https://akabab.github.io/superhero-api/api/id/${params.id}.json`
       
           try{
             const marvelResponse = await axios.get(marvelURL)
             const marvel = await marvelResponse;
             //console.log(marvel)
-            const heroDetail =  marvel.data.find(item => item.id === params.id * 1) 
-            setHero(heroDetail)
-            console.log({ hero : heroDetail , heros : marvel.data}); 
-      
+           
+            setHero(marvel.data)
+           
       
             
       
@@ -46,7 +45,7 @@ const HeroDetails = () =>{
 
         <h1>{hero.name}</h1>
         <h1>{hero.slug}</h1>
-        {/* <h1>{hero.biography.fullName}</h1> */}
+        <h1>{hero.biography?.fullName}</h1>
 
         </>
     )
