@@ -16,6 +16,7 @@ import { List, ListItem, Drawer, ListItemIcon } from '@mui/material';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import HomeIcon from '@mui/icons-material/Home';
 
 export default function ButtonAppBar() {
    const [isOpen, setIsOpen] =  React.useState(false)
@@ -78,6 +79,9 @@ export default function ButtonAppBar() {
           </IconButton>
 
           <Typography variant="h4" component="div" sx={{ flexGrow: 1, }}>
+         <IconButton  size='large' aria-label='home button' color='inherit' onClick={() => handleNavChoice('welcome')}>
+           <HomeIcon/>
+          </IconButton>
             <Link to={"/heroes"}>Super Hero</Link>
           </Typography>
           <Button color="inherit"><Link className="nav-link" to={"/signin"}>Login</Link></Button>

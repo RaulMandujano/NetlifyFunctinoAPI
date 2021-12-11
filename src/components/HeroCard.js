@@ -9,6 +9,9 @@ import HeroModal from './HeroModal';
 import HoverRating from './HoverRating';
 import { CardActionArea } from '@mui/material';
 
+import IconButton from '@mui/material/IconButton';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import { useHistory } from 'react-router-dom';
 
 
@@ -50,7 +53,13 @@ const HeroCard = (props) => {
 
 
       <CardActions>
+        
+      <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+
         <HoverRating/>
+
 
         <HeroModal 
             combat={combat}
