@@ -19,11 +19,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-const LogInWithEmailAndPassword = async (email , password) => { 
+const logInWithEmailAndPassword = async (email , password) => { 
     try  {
         await signInWithEmailAndPassword(auth ,email,password);
     } catch (err) {
@@ -51,12 +51,12 @@ const registerWithEmailAndPassword = async ( firstName , lastName , email , pass
 }
 
 const logout = () => { 
-    signOut();
+    signOut(auth);
 }
 
 export { 
     auth,
-    LogInWithEmailAndPassword,
+    logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     logout,
 }

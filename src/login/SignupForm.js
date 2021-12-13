@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router";
 import { auth, registerWithEmailAndPassword } from "../firebase";
@@ -8,7 +8,7 @@ const Signup = () => {
     const [password, setPassword] = useState("")
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("")
-    const [user , loading , error] = useAuthState(auth)
+    const [user , loading ] = useAuthState(auth)
     const history = useHistory();
 
     const register = (e) => { 
@@ -21,7 +21,7 @@ const Signup = () => {
 
         if(user) history.replace("/heroes");
 
-    }, [user, loading]);
+    }, [user, loading , history]);
 
     return (
         <form>

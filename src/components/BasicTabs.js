@@ -4,6 +4,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import MarvelContexts from '../contexts/MarvelContexts';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useHistory } from 'react-router';
+import { auth } from '../firebase';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,6 +43,18 @@ function a11yProps(index) {
 
 const BasicTabs  = () => {
   const [value, setValue] = React.useState(0);
+  const [user , loading ] = useAuthState(auth)
+  const history = useHistory();
+
+  React.useEffect(() => { 
+    console.log({ user })
+      if(loading) { 
+          // loading effect
+          return;
+      }
+
+      if(!user) history.replace("/signin")
+  }, [user, loading , history ]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

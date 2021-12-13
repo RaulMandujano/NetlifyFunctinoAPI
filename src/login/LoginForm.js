@@ -1,13 +1,13 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useHistory } from "react-router";
-import { auth } from "../firebase";
+import { auth, logInWithEmailAndPassword } from "../firebase";
 
 const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
-    const [user , loading , error] = useAuthState(auth)
+    const [user , loading ] = useAuthState(auth)
     const history = useHistory();
 
     useEffect(() => { 
@@ -16,8 +16,13 @@ const Login = () => {
             return;
         }
 
-        if(user) history.replace("/heros")
-    })
+        if(user) history.replace("/heroes")
+    }, [user, loading , history])
+
+    const logIn = (e) => { 
+        e.preventDefault();
+        logInWithEmailAndPassword(email , password)
+    }
 
     return (
         <form>
@@ -25,12 +30,12 @@ const Login = () => {
 
             <div className="form-group">
                 <label>Email address</label>
-                <input type="email" className="form-control" placeholder="Enter email" required/>
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" placeholder="Enter email" required/>
             </div>
 
             <div className="form-group">
                 <label>Password</label>
-                <input type="password" className="form-control" placeholder="Enter password" required/>
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" placeholder="Enter password" required/>
             </div>
 
             <div className="form-group">
@@ -40,7 +45,7 @@ const Login = () => {
                 </div>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block">Submit</button>
+            <button  onClick={logIn} className="btn btn-primary btn-block">Submit</button>
             
         </form>
     );
