@@ -16,7 +16,6 @@ import { List, ListItem, Drawer, ListItemIcon } from '@mui/material'
 import PermIdentityIcon from '@mui/icons-material/PermIdentity'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd'
-import HomeIcon from '@mui/icons-material/Home'
 import { auth, logout } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
@@ -102,9 +101,7 @@ export default function ButtonAppBar() {
                 aria-label="home button"
                 color="inherit"
                 onClick={() => handleNavChoice('welcome')}
-              >
-                <HomeIcon />
-              </IconButton>
+              ></IconButton>
               <Link to={'/heroes'}>Super Hero</Link>
             </Typography>
             <Button color="inherit">

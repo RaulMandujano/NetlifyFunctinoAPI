@@ -1,11 +1,12 @@
 import axios from 'axios'
 import * as React from 'react'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 
 import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
+import Button from '@mui/material/Button'
 
 import Divider from '@mui/material/Divider'
 
@@ -75,6 +76,10 @@ const HeroDetails = () => {
           <Typography variant="h5" color="text.secondary" component="div">
             First Appearance: {hero.biography?.firstAppearance}
           </Typography>
+          <br />
+          <NavLink to="/Heroes">
+            <Button variant="outlined">Go Back</Button>
+          </NavLink>
         </CardContent>
 
         <CardMedia
