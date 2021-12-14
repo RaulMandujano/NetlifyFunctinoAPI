@@ -16,6 +16,7 @@
     "breadcrumb": "^1.0.0",
     "firebase": "^9.6.1",
     "formik": "^2.2.9",
+    "framer-motion": "^5.4.5",
     "gatsby-plugin-netlify-identity-gotrue": "^0.3.5",
     "graphql": "^16.1.0",
     "react": "^17.0.2",

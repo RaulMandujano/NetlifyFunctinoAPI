@@ -70,7 +70,7 @@ useEffect(()=>{
           
           {
           searchTerm.length > 2 ? 
-          allHeroes.filter(hero => hero.name.includes(searchTerm)).map(renderHero)
+          allHeroes.filter(hero => hero.name.toLowerCase().includes(searchTerm.toLowerCase())).map(renderHero)
           :
           allHeroes.map(renderHero)
           }

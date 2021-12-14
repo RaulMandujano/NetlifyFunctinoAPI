@@ -102,7 +102,7 @@ export default function ButtonAppBar() {
                 color="inherit"
                 onClick={() => handleNavChoice('welcome')}
               ></IconButton>
-              <Link to={'/heroes'}>Super Hero</Link>
+              <Link className="nav-link" to={'/heroes'}>Super Hero</Link>
             </Typography>
             <Button color="inherit">
               <Link className="nav-link" to={'/signin'}>
