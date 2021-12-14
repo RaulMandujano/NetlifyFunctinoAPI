@@ -16,6 +16,7 @@ const Signup = () => {
         registerWithEmailAndPassword(firstName , lastName, email , password)
     }
 
+    
     useEffect(() => { 
         if(loading) return;
 

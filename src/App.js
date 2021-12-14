@@ -27,6 +27,7 @@ const App = () => {
     if(location !== displayLocation) setTransitionStage("fadeOut")
   }, [location])
  
+  
   return (
     <div>
       <ButtonAppBar />

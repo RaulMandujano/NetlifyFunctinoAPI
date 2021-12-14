@@ -24,6 +24,7 @@ const Login = () => {
         logInWithEmailAndPassword(email , password)
     }
 
+    
     return (
         <form>
             <h3>Sign In</h3>

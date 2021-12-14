@@ -37,6 +37,7 @@ const HeroDetails = () => {
 
   if (!hero) return null
 
+  
   return (
     <div>
       <Card sx={{ display: 'flex' }}>
