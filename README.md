@@ -11,7 +11,11 @@ This project demonstrates part of my knowledge in React and the good use of Rout
 ## Build with
 
 *  React
+*  JavaScript
 *  Node
-*  Express
-*  PostgreSQL
+*  FireBase
 *  CSS
+
+## APIs Used
+
+[Hero API](https://superheroapi.com/)
